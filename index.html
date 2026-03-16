@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deheng Xu</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --link: #1d4ed8;
+      --accent: #eef4ff;
+      --accent-2: #dbeafe;
+      --maxw: 1020px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.72;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(255,255,255,0.92);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .brand { font-size: 1.05rem; font-weight: 700; letter-spacing: 0.01em; }
+    .nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 0.98rem; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 42px 20px 80px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(17,24,39,0.05);
+    }
+    h1 { margin: 0 0 8px; font-size: 2.35rem; line-height: 1.15; }
+    h2 { margin: 0 0 18px; font-size: 1.55rem; line-height: 1.2; }
+    .sub { color: var(--muted); margin-bottom: 18px; }
+    .pill {
+      display: inline-block;
+      margin: 0 8px 8px 0;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent);
+      border: 1px solid var(--accent-2);
+      font-size: 0.92rem;
+      color: #24417a;
+    }
+    .label { font-weight: 700; color: #111827; }
+    .muted { color: var(--muted); }
+    .btnrow { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .btn.primary {
+      background: #1d4ed8;
+      color: white;
+      border-color: #1d4ed8;
+    }
+    .section { margin-top: 28px; }
+    .paper { padding: 18px 0; border-top: 1px solid var(--line); }
+    .paper:first-of-type { border-top: none; padding-top: 0; }
+    .paper-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 4px; }
+    .paper-meta { color: var(--muted); font-size: 0.96rem; margin-bottom: 6px; }
+    footer {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      h1 { font-size: 2rem; }
+      .topbar-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">Deheng Xu</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="home" class="hero">
+      <div class="card">
+        <h1>Deheng Xu</h1>
+        <div class="sub">Research Assistant Professor of Finance<br />Department of Finance, The Chinese University of Hong Kong</div>
+        <p>I am a Research Assistant Professor at the Department of Finance, The Chinese University of Hong Kong (CUHK).</p>
+        <p>
+          This homepage is designed in a clean academic style, with a simple navigation bar,
+          a short profile section, a CV link, and dedicated research and publication sections.
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener noreferrer">Download CV</a>
+          <a class="btn" href="#research">View Research</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h2>Profile</h2>
+        <p><span class="label">Position:</span> Research Assistant Professor of Finance</p>
+        <p><span class="label">School:</span> The Chinese University of Hong Kong</p>
+        <p><span class="label">Department:</span> Department of Finance</p>
+        <p><span class="label">Research Interests:</span></p>
+        <div>
+          <span class="pill">Finance</span>
+          <span class="pill">Banking</span>
+          <span class="pill">Housing</span>
+        </div>
+        <p class="muted" style="margin-top: 18px;">
+          If you upload your CV into the same GitHub repository and name it <code>cv.pdf</code>,
+          the CV button above will work automatically.
+        </p>
+      </aside>
+    </section>
+
+    <section id="research" class="card section">
+      <h2>Working Papers</h2>
+
+      <article class="paper">
+        <div class="paper-title">Bank Interest Rate</div>
+        <div class="paper-meta">Working paper</div>
+        <div>A placeholder summary can be added here later.</div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-title">Housing Supply</div>
+        <div class="paper-meta">Working paper</div>
+        <div>A placeholder summary can be added here later.</div>
+      </article>
+
+    </section>
+
+    <section id="publications" class="card section">
+      <h2>Publications</h2>
+      <p class="muted">Publications can be added here in the same style as the working papers section.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Personal website. Built as a lightweight academic homepage for GitHub Pages.
+  </footer>
+</body>
+</html>
